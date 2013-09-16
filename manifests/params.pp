@@ -64,16 +64,16 @@ class lumberjack::params {
   # service parameters
   case $::operatingsystem {
     'CentOS', 'Fedora', 'Scientific', 'OracleLinux', 'Amazon', 'RedHat': {
-      $service_name       = 'lumberjack'
+      #$service_name       = 'lumberjack'
       $service_hasrestart = true
       $service_hasstatus  = true
-      $service_pattern    = $service_name
+      $service_pattern    = 'lumberjack'
     }
     'Debian', 'Ubuntu': {
-      $service_name       = 'lumberjack'
+      #$service_name       = 'lumberjack'
       $service_hasrestart = true
       $service_hasstatus  = true
-      $service_pattern    = $service_name
+      $service_pattern    = 'lumberjack'
     }
     default: {
       fail("\"${module_name}\" provides no service parameters
